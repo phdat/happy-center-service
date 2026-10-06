@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: happy-api
+  datasource:
+    # File-based H2 so leads survive restarts in dev. Switch to PostgreSQL/MySQL for production.
+    url: jdbc:h2:file:./data/happy;AUTO_SERVER=TRUE
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  mvc:
+    problemdetails:
+      enabled: true
+
+server:
+  port: 8080
+
+happy:
+  cors:
+    # Comma-separated list of front-end origins allowed to call the API.
+    allowed-origins: http://localhost:4200
